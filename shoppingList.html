@@ -5,10 +5,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Personal JS -->
+<!-- Personal javascript -->
   <script src='js/view.js' type='text/javascript'></script>
   <script src='js/model.js' type='text/javascript'></script>
-  <script src='js/controller.js' type='text/javascript'></script> 
+  <script src='js/controller.js' type='text/javascript'></script>
   <body>
     <h1>Shopping List</h1>
     <input id='search' type='search' onfocus="this.value=''" value='' placeholder="Search...">
@@ -35,18 +35,26 @@
     </select>
 
     Store <select id='store'>
-      <option value='grocery'>Grocery</option>
-      <option value='notGrocery'>Not Grocery</option>
+      <option value="aldis">Aldi's</option>
+      <option value='kwikstar'>Kwik Star</option>
+    </select>
+
+    Section <select id='section'>
+      <option value='deli'>Deli</option>
+      <option value='frozen'>Frozen</option>
+      <option value='food'>Food</option>
+      <option value='otherfood'>Other Food</option>
+      <option value='muchfood'>Much Food</option>
     </select>
 
     <input id='price' type='number' placeholder='Price'>
 
-    <button onclick="addItem()" id='buttonAdd'>Add</button>
-    <script src='js/shoppingList.js?x=1' type='text/javascript'></script>
+    <button onclick="onClick()" id='buttonAdd'>Add</button>
 
     <table id='itemList' class="table">
       <thead>
         <tr>
+          <th>Purchased</th>
           <th>Item</th>
           <th>Quantity</th>
           <th>Store</th>
