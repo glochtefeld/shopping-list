@@ -11,22 +11,13 @@
   <script src='js/controller.js' type='text/javascript'></script>
   <body>
     <h1>Shopping List</h1>
-    <input id='search' type='search' onfocus="this.value=''" value='' placeholder="Search...">
+    <!-- <input id='search' type='search' onfocus="this.value=''" value='' placeholder="Search...">
+    SAVE FOR LATER -->
     <br>
+    <div id='dataEntry'>
     <h1>Data Entry</h1>
     Name <input id='itemName' type='text'>
-    Quantity <select id='quantity'>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+    Quantity <select id='quantity'></select>
 
     Priority <select id='priority'>
       <option value="low">Low</option>
@@ -34,34 +25,22 @@
       <option value="high">High</option>
     </select>
 
-    Store <select id='store'>
-      <option value="aldis">Aldi's</option>
-      <option value='kwikstar'>Kwik Star</option>
-    </select>
+    Store <select id='store'></select>
 
-    Section <select id='section'>
-      <option value='deli'>Deli</option>
-      <option value='frozen'>Frozen</option>
-      <option value='food'>Food</option>
-      <option value='otherfood'>Other Food</option>
-      <option value='muchfood'>Much Food</option>
-    </select>
+    Section <select id='category'></select>
 
     <input id='price' type='number' placeholder='Price'>
 
-    <button onclick="onClick()" id='buttonAdd'>Add</button>
+    <button onclick="clickedon()" id='buttonAdd'>Add</button>
+  </div>
 
     <table id='itemList' class="table">
       <thead>
         <tr>
-          <th>Purchased</th>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Store</th>
-          <th>Location</th>
-          <th>Price</th>
+          <th>Purchased</th><th>Item</th><th>Quantity</th><th>Store</th><th>Location</th><th>Price</th>
         </tr>
       <thead>
+      <tbody id="shoppinglist"></tbody>
     </table>
 
   </body>
