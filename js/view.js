@@ -9,33 +9,33 @@ class ShoppingView {
     }
 
     redrawList(shoppingList, msg) {
-        let tbl = document.getElementById("shoppingList")
-        tbl.innerHTML = "";
+        let tbl = document.getElementById("shoppinglist")
+        tbl.innerHTML = ""
         for (let item of shoppingList.newItems) {
             this.addRow(item, tbl)
         }
-
     }
 
     addRow(item, parent) {
-        let row = document.createElement("tr"); // makes row
-        row.classList.add(item.priority); // adds priority to shoppingView variables, probably
-        let cb = document.createElement("input"); //created Checkbox
-        cb.type = "checkbox";
-        cb.classList.add("form-control");
-        cb.onclick = function() { item.purchased = true; } // quick function definition, sets purchased == true
-        row.appendChild(cb) // first item in row
+        let row = document.createElement("tr")
+        row.classList.add(item.priority)
+        let cb = document.createElement("input")
+
+        cb.type = "checkbox"
+        cb.classList.add("form-control")
+        cb.onclick = function() {
+          item.purchased = true;
+          item.strikethrough(row);
+        }
+        row.appendChild(cb);
+        row.classList.add(item.priority);
+
 
         for (let val of ['name', 'quantity', 'store', 'section', 'price']) {
-            // Basically cranks out td for each quality
             let td = document.createElement("td")
-            td.innerHTML = item[val] // val is redefined each time
+            td.innerHTML = item[val]
             row.appendChild(td)
         }
-        parent.appendChild(row) // parent is table
-    }
-
-    deleteRow(row) {
-      if
+        parent.appendChild(row)
     }
 }
