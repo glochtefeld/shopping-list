@@ -15,4 +15,12 @@ def anyname():
 def hello():
     return "<h1>Hello World</h1>"
 
+@app.route('/saveList')
+def saveToFile(file):
+    '''
+    for row in table:
+        comma seperated identities
+        [name, quantity, price, ]
+    '''
+
 app.run(debug = True, port = 5001)

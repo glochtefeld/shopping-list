@@ -20,8 +20,6 @@ class Item {
     strikethrough(row) {
       row.className = 'selected';
       //row.style = ''
-
-
       table.deleteRow(index);
         }
 }
@@ -50,14 +48,12 @@ class Subject {
     }
 }
 
-
 class ShoppingList extends Subject {
     constructor() {
         super()
         this.newItems = []
         this.oldItems = [];
     }
-
     addItem(it) {
         this.newItems.push(it)
         this.publish('newitem', this)
