@@ -1,12 +1,6 @@
-<html>
-    <head>
-        <!-- https://www.w3schools.com/bootstrap/bootstrap_get_started.asp -->
-        <title>Shopping List Application</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/shoppingStyle.css">
-    </head>
+{% extends 'layout.html' %}
 
-    <body>
+{% block content %}
         <div class="container">
                 <nav class="navbar navbar-default">
                         <div class="container-fluid">
@@ -88,8 +82,7 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src='js/view.js?x=2' type='text/javascript'></script>
-        <script src='js/model.js?x=2' type='text/javascript'></script>
-        <script src='js/controller.js?x=2' type='text/javascript'></script>
-    </body>
-</html>in
+        <script src='../static/js/view.js?x=2' type='text/javascript'></script>
+        <script src='../static/js/model.js?x=2' type='text/javascript'></script>
+        <script src='../static/js/controller.js?x=2' type='text/javascript'></script>
+{% endblock %}

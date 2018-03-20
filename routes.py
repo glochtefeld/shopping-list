@@ -1,8 +1,14 @@
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 import random, json
 import time
 
 app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template("index2.html")
+
 
 @app.route('/getnum')
 def anyname():
@@ -22,5 +28,5 @@ def saveToFile(file):
         comma seperated identities
         [name, quantity, price, ]
     '''
-
-app.run(debug = True, port = 5001)
+if __name__ == '__main__':
+    app.run(debug = True, port = 5001)
