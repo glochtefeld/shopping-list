@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return render_template("index2.html")
 
-
+'''
 @app.route('/getnum')
 def anyname():
     time.sleep(2)
@@ -23,7 +23,7 @@ def hello():
 
 @app.route('/saveList')
 def saveToFile(file):
-    '''
+    
     for row in table:
         comma seperated identities
         [name, quantity, price, ]
