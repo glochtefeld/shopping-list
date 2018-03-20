@@ -9,9 +9,11 @@
                         </div>
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Home</a></li>
+                            <!--
                             <li><a href="#">Page 1</a></li>
                             <li><a href="#">Page 2</a></li>
                             <li><a href="#">Page 3</a></li>
+                          -->
                         </ul>
                         </div>
                     </nav>
@@ -65,15 +67,16 @@
                     </div>
                 </div>
                 <div class="form-inline" style="float: right;">
+                <button onclick='clearAll()' class='btn' id='clearbutton'>Clear List</button>
                 <button onclick="clickedon()" class="btn btn-primary" id=gobutt>Add Item</button>
                 </div>
                 </div>
             </div>
             <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id='shoppinglistTB'>
                 <thead>
                     <tr>
-                        <th></th><th>Item</th><th>Quantity</th><th>Store</th><th>Section</th><th>Price</th>
+                        <th></th><th onclick="sort(0)">Item</th><th onclick="sort(1)">Quantity</th><th onclick="sort(2)">Store</th><th onclick="sort(3)">Section</th><th onclick="sort(4)">Price</th>
                     </tr>
                 </thead>
                 <tbody id="shoppinglist"></tbody>
