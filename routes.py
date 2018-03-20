@@ -6,11 +6,11 @@ import time
 app = Flask(__name__)
 
 
-
-@app.route('/')
+'''
+@app.route('/') # This won't work on GHPages, so it's out on this branch.
 def index():
     return render_template("index2.html")
-
+'''
 
 @app.route('/saveList')
 #write json to file
