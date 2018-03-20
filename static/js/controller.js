@@ -60,7 +60,7 @@ function sort(rowHead) {
 
 function clearAll() {
 
-  var tbody = document.getElementById('shoppinglist')
+  let tbody = document.getElementById('shoppinglist')
   tbody.innerHTML = ""
 }
 
@@ -68,7 +68,7 @@ function saveItAll() {
   var lclStorage = window.localStorage;
   let tbody = document.getElementById('shoppinglist')
   let lclStrg = JSON.stringify(tbody)
-  lclStorage.setItem('myTab':lclStrg)
+  console.log(lclStrg)
 }
 
 $(document).ready(function () {

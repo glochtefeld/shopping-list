@@ -11,6 +11,13 @@ app = Flask(__name__)
 def index():
     return render_template("index2.html")
 
+
+@app.route('/saveList')
+#write json to file
+
+@app.route('/getList')
+# read json from file
+
 '''
 @app.route('/getnum')
 def anyname():
