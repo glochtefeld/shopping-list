@@ -18,7 +18,7 @@ class Item {
         alert(`${this.name} was purchased`);
       }
     strikethrough(row) {
-      row.className = 'selected';
+      row.className = 'strikeout';
       //row.style = ''
       table.deleteRow(index);
         }

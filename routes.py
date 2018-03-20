@@ -2,7 +2,9 @@ from flask import Flask, Response, render_template
 import random, json
 import time
 
+
 app = Flask(__name__)
+
 
 
 @app.route('/')
@@ -23,7 +25,7 @@ def hello():
 
 @app.route('/saveList')
 def saveToFile(file):
-    
+
     for row in table:
         comma seperated identities
         [name, quantity, price, ]
