@@ -1,6 +1,11 @@
-{% extends 'layout.html' %}
-
-{% block content %}
+<html>
+    <head>
+        <!-- https://www.w3schools.com/bootstrap/bootstrap_get_started.asp -->
+        <title>Shopping List Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/shoppingStyle.css') }}">
+    </head>
+    <body>
         <div class="container">
                 <nav class="navbar navbar-default">
                         <div class="container-fluid">
@@ -76,7 +81,12 @@
             <table class="table table-bordered" id='shoppinglistTB'>
                 <thead>
                     <tr>
-                        <th></th><th onclick="sort(0)">Item</th><th onclick="sort(1)">Quantity</th><th onclick="sort(2)">Store</th><th onclick="sort(3)">Section</th><th onclick="sort(4)">Price</th>
+                        <th></th>
+                        <th onclick="sort(0)">Item</th>
+                        <th onclick="sort(1)">Quantity</th>
+                        <th onclick="sort(2)">Store</th>
+                        <th onclick="sort(3)">Section</th>
+                        <th onclick="sort(4)">Price</th>
                     </tr>
                 </thead>
                 <tbody id="shoppinglist"></tbody>
@@ -88,4 +98,5 @@
         <script src="{{ url_for('static', filename='js/view.js') }}" type='text/javascript'></script>
         <script src="{{ url_for('static', filename='js/model.js') }}" type='text/javascript'></script>
         <script src="{{ url_for('static', filename='js/controller.js') }}" type='text/javascript'></script>
-{% endblock %}
+      </body>
+    </html>
