@@ -79,6 +79,10 @@ function clearAll() {
 
   let tbody = document.getElementById('shoppinglist')
   tbody.innerHTML = ""
+  for (item in shoppingModel.newItems) {
+    shoppingModel.removeItem(item)
+  }
+
 }
 
 $(document).ready(function () {
