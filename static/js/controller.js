@@ -1,8 +1,24 @@
 var stores = ['Fareway', 'Ace Hardware', 'Caseys', 'The Hatchery', 'Amundsens'];
 var sections = ['Produce', 'Meats', 'Cereal', 'Canned Goods', 'Frozen Foods', 'Dairy', 'Liquor', 'Tools', 'Clothing'];
-
+var openList = new SaveList(localStorage)
 var shoppingModel = new ShoppingList()
 var myView = new ShoppingView(shoppingModel)
+
+fetch('http://localhost:5001/getList', config)
+.then(function(response) {
+  return response.json()
+})
+  .catch(error => console.error('Error: ', error))
+  .then(function(response){
+    if (response != null) {
+      for ( i in response) {
+        let nu = new Item(i)
+      }
+    }
+  })
+
+
+
 
 function clickedon() {
     let rowcolids = ['itemname', 'qty', 'store', 'category', 'price', 'priority']
@@ -62,13 +78,6 @@ function clearAll() {
 
   let tbody = document.getElementById('shoppinglist')
   tbody.innerHTML = ""
-}
-
-function saveItAll() {
-  var lclStorage = window.localStorage;
-  let tbody = document.getElementById('shoppinglist')
-  let lclStrg = JSON.stringify(tbody)
-  console.log(lclStrg)
 }
 
 $(document).ready(function () {

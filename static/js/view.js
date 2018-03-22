@@ -14,6 +14,18 @@ class ShoppingView {
         for (let item of shoppingList.newItems) {
             this.addRow(item, tbl)
         }
+
+        // FLASK YEY
+        config.method = 'POST'
+        config.body = JSON.stringify(shoppingList.newItems) // must match content type
+        config.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+
+        fetch('http://localhost:5001/saveList', config)
+        .then(function(response) {
+          console.log(response)
+          return response.json()
+        })
+
     }
 
     addRow(item, parent) {
