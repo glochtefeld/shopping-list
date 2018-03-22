@@ -1,9 +1,10 @@
 var stores = ['Fareway', 'Ace Hardware', 'Caseys', 'The Hatchery', 'Amundsens'];
 var sections = ['Produce', 'Meats', 'Cereal', 'Canned Goods', 'Frozen Foods', 'Dairy', 'Liquor', 'Tools', 'Clothing'];
-var openList = new SaveList(localStorage)
+
+
 var shoppingModel = new ShoppingList()
 var myView = new ShoppingView(shoppingModel)
-
+/*
 fetch('http://localhost:5001/getList', config)
 .then(function(response) {
   return response.json()
@@ -16,7 +17,7 @@ fetch('http://localhost:5001/getList', config)
       }
     }
   })
-
+*/
 
 
 
