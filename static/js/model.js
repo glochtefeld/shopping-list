@@ -19,8 +19,6 @@ class Item {
       }
     strikethrough(row) {
       row.className = 'strikeout';
-      //row.style = ''
-      table.deleteRow(index);
         }
 }
 
