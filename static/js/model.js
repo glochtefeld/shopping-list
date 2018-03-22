@@ -16,7 +16,7 @@ class Item {
     set purchased(nv) {
         this._purchased = nv;
         alert(`${this.name} was purchased`);
-        
+
       }
     strikethrough(row) {
       row.className = 'strikeout';
@@ -57,7 +57,7 @@ class ShoppingList extends Subject {
         this.newItems.push(it)
         this.publish('newitem', this)
     }
-    removeItem(it) {
+    deleteItem(it) {
       this.oldItems.push(it)
       this.newItems.splice(it)
     }

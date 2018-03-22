@@ -4,9 +4,9 @@
 
 class ShoppingView {
     constructor(model) {
-        var sList = model
+        this.sList = model;
         // The bind() method creates a new function that, when called, has its this keyword set to the provided value.
-        sList.subscribe(this.redrawList.bind(this))
+        this.sList.subscribe(this.redrawList.bind(this))
     }
 
     redrawList(shoppingList, msg) {
@@ -17,14 +17,15 @@ class ShoppingView {
         }
 
         // FLASK YEY
+        var config = {}
         config.method = 'POST'
-        config.body = JSON.stringify(shoppingList.newItems) // must match content type
-        config.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-
+        config.body = JSON.stringify(shoppingList.newItems);
+        config.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
+        console.log(config) // must match content type
         fetch('http://localhost:5001/saveList', config)
         .then(function(response) {
           console.log(response)
-          return response.json()
+          return response
         })
 
     }
@@ -39,7 +40,7 @@ class ShoppingView {
         cb.onclick = function() {
           item.purchased = true;
           item.strikethrough(row);
-          sList.removeItem(item);
+          this.sList.deleteItem(item);
         }
         row.appendChild(cb);
         row.classList.add(item.priority);

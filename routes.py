@@ -1,5 +1,5 @@
-from flask import Flask, Response, render_template, jsonify
-
+from flask import Flask, Response, render_template, jsonify, request
+import json
 
 app = Flask(__name__)
 
@@ -14,22 +14,23 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/saveList')
+@app.route('/saveList', methods=['POST'])
 def saveList():
-    lst = []
-    with open('localStorage.txt', 'a') as outFile:
-        outFile.write(Request.dumps(request.json))
 
+    with open('localStorage.txt', 'w') as outFile:
+        #print(request.json)
+        outFile.write(json.dumps(request.json))
     res = Response('')
     return res
 
 @app.route('/getList')
 # read json from file
 def getList():
-    inFile = open('localStorage.txt', 'r')
-    inPut = inFile.read()
+    with open('localStorage.txt', 'r') as inFile:
+        ln = textfile.read()
 
-    return jsonify(inPut)
+
+    return jsonify(ln)
 
 
 if __name__ == '__main__':

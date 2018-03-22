@@ -4,10 +4,20 @@ var sections = ['Produce', 'Meats', 'Cereal', 'Canned Goods', 'Frozen Foods', 'D
 
 var shoppingModel = new ShoppingList()
 var myView = new ShoppingView(shoppingModel)
-/*
-fetch('http://localhost:5001/getList', config)
+
+fetch('/getList')
 .then(function(response) {
+  console.log(response)
   return response.json()
+})
+.then(function(thelist){
+  if (json != null) {
+    let shopList = JSON.parse(thelist)
+    for (let item of shopList) {
+      let newitem = new Item(item['name'], item['quantity'], item['priority'], item['store'], item['section'], item['price'])
+      shoppingModel.addItem(newitem)
+    }
+    }
 })
   .catch(error => console.error('Error: ', error))
   .then(function(response){
@@ -17,7 +27,7 @@ fetch('http://localhost:5001/getList', config)
       }
     }
   })
-*/
+
 
 
 
@@ -80,7 +90,7 @@ function clearAll() {
   let tbody = document.getElementById('shoppinglist')
   tbody.innerHTML = ""
   for (item in shoppingModel.newItems) {
-    shoppingModel.removeItem(item)
+    shoppingModel.deleteItem(item)
   }
 
 }
