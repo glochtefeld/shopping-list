@@ -21,7 +21,7 @@ def saveList():
 @app.route('/getList')
 # read json from file
 def getList():
-    with open('localStorage.txt', 'r') as inFile:
+    with open('localStorage.txt', 'r+') as inFile:
         ln = inFile.read()
 
     return jsonify(ln)
