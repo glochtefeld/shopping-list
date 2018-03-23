@@ -20,7 +20,10 @@ class Item {
       }
     strikethrough(row) {
       row.className = 'strikeout';
+
+      setTimeout(removeRow(row, row.parent), 2);
         }
+
 }
 
 class Subject {

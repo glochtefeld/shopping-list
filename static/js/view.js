@@ -6,7 +6,7 @@ class ShoppingView {
     constructor(model) {
         this.sList = model;
         // The bind() method creates a new function that, when called, has its this keyword set to the provided value.
-        this.sList.subscribe(this.redrawList.bind(this))
+        model.subscribe(this.redrawList.bind(this))
     }
 
     redrawList(shoppingList, msg) {
@@ -40,7 +40,7 @@ class ShoppingView {
         cb.onclick = function() {
           item.purchased = true;
           item.strikethrough(row);
-          this.sList.deleteItem(item);
+          //this.sList.deleteItem(item);
         }
         row.appendChild(cb);
         row.classList.add(item.priority);

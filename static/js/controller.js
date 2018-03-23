@@ -4,14 +4,14 @@ var sections = ['Produce', 'Meats', 'Cereal', 'Canned Goods', 'Frozen Foods', 'D
 
 var shoppingModel = new ShoppingList()
 var myView = new ShoppingView(shoppingModel)
-
+// ITS ALL RIGHT HERE THIS IS THE ONLY THING THAT DOESN"T WORK PROBABLY
 fetch('/getList')
 .then(function(response) {
   console.log(response)
   return response.json()
 })
 .then(function(thelist){
-  if (json != null) {
+  if (thelist != null) {
     let shopList = JSON.parse(thelist)
     for (let item of shopList) {
       let newitem = new Item(item['name'], item['quantity'], item['priority'], item['store'], item['section'], item['price'])
@@ -91,8 +91,23 @@ function clearAll() {
   tbody.innerHTML = ""
   for (item in shoppingModel.newItems) {
     shoppingModel.deleteItem(item)
-  }
+    }
+    var config = {}
+    config.method = 'POST'
+    config.body = 'nothing';
+    config.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
+    //console.log(config) // must match content type
+    fetch('http://localhost:5001/clearList', config)
+    .then(function(response) {
+      console.log(response)
+      return response
+  })
 
+}
+
+function removeRow(row, item) {
+  row.style.display = 'none';
+  shoppingModel.deleteItem(item)
 }
 
 $(document).ready(function () {
