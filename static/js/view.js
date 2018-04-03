@@ -22,7 +22,7 @@ class ShoppingView {
         config.body = JSON.stringify(shoppingList.newItems);
         config.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
         console.log(config) // must match content type
-        fetch('http://localhost:5001/saveList', config)
+        fetch('/saveList', config)
         .then(function(response) {
           console.log(response)
           return response
