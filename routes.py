@@ -8,28 +8,27 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
 @app.route('/saveList', methods=['POST'])
-def saveList():
+def save_list():
 
-    with open('localStorage.txt', 'w') as outFile:
+    with open('localStorage.txt', 'w') as out_file:
         #print(request.json)
-        outFile.write(json.dumps(request.json))
+        out_file.write(json.dumps(request.json))
     res = Response('')
     return res
 
 @app.route('/getList')
 # read json from file
-def getList():
-    with open('localStorage.txt', 'r+') as inFile:
-        ln = inFile.read()
+def get_list():
+    with open('localStorage.txt', 'r+') as in_file:
+        ln = in_file.read()
 
     return jsonify(ln)
 
 @app.route('/clearList', methods=['POST'])
-def clearList():
-    with open('localStorage.txt', 'w') as outFile:
-        outFile.write('')
+def clear_list():
+    with open('localStorage.txt', 'w') as out_file:
+        out_file.write('')
     res = Response('Cleared Memory')
     return res
 
